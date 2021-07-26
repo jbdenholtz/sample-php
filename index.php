@@ -13,9 +13,10 @@ $mysql_username = "doadmin";
 $mysql_password = "fcmakbh4nfis1942";
 $mysql_host = "db-mysql-jd-test-database-do-user-9579838-0.b.db.ondigitalocean.com";
 $mysql_database = "defaultdb";
+$mysqli_port = 25060;
 
 
-$db = mysqli_connect($mysql_host, $mysql_username, $mysql_password, $mysql_database);
+$db = mysqli_connect($mysql_host, $mysql_username, $mysql_password, $mysql_database, $mysqli_port);
 
 
 //$db = mysqli_connect("test", "test", "test", "test");
