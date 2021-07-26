@@ -25,9 +25,9 @@ echo "<br><br>MYSQLI CONNECT - Using DO database<br>";
 
 print_r($db);
 
-$last_error = error_get_last();
-echo "<br>MYSQLI ERROR:<br>";
-print_r($last_error);
+//$last_error = error_get_last();
+//echo "<br>MYSQLI ERROR:<br>";
+//print_r($last_error);
 
 //-----------------------------------------------------------------------------    
 
@@ -42,6 +42,11 @@ print_r($email);
 echo "<br><br>MONGO EXTENSION LOADED:";
 echo extension_loaded("mongodb") ? "loaded\n" : "not loaded\n";
 
+echo "<br><br>MONGO DATABASE TEST:<br>";
+$database = (new MongoDB\Client)->test;
+print_r($manager);
+
+/*
 
 echo "<br><br>MONGO MANAGER:<br>";
 $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");    
@@ -57,7 +62,7 @@ echo "<br><br>MONGO CLIENT:<br>";
 $client = new MongoDB\Client("mongodb://localhost:27017");    
 print_r($client);
 
-
+*/
 
 
 
