@@ -3,7 +3,10 @@
     "description": "Sample PHP application for App Platform",
     "type": "project",
     "require": {
-        "alrik11es/cowsayphp": "^1.2"
+        "alrik11es/cowsayphp": "^1.2",
+        "stripe/stripe-php": "^7.91",
+        "sendgrid/sendgrid": "~7",
+        "ext-mongodb": "*"
     },
     "authors": [
         {
