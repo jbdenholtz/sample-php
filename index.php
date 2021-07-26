@@ -18,13 +18,17 @@ $mysqli_port = 25060;
 
 $db = mysqli_connect($mysql_host, $mysql_username, $mysql_password, $mysql_database, $mysqli_port);
 
+echo "<br><br>MYSQLI CONNECT - Using DO database<br>";
+
+print_r($db);
+
 $sql = "SELECT * FROM test_table";
 
 $result = mysqli_query($db, $sql);        
 
 $error = mysqli_error($db);
 
-echo "MYSQL TEST SELECT";
+echo "<br>MYSQL TEST SELECT<br>";
 
 if ($error != "")
 {
@@ -32,8 +36,14 @@ if ($error != "")
 }
 else
 {
-	$test_data = mysqli_fetch_all($result);
-	print_r($test_data);
+	$test_data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+	for ($i = 0; $i<count($test_data); $i++)
+	{
+		echo "<br>";
+		print_r($test_data[$i]);
+		echo "<br>";
+	}	
 }
 
 
@@ -41,9 +51,7 @@ else
 
 //$db = mysqli_connect("test", "test", "test", "test");
 
-echo "<br><br>MYSQLI CONNECT - Using DO database<br>";
 
-print_r($db);
 
 //$last_error = error_get_last();
 //echo "<br>MYSQLI ERROR:<br>";
@@ -58,9 +66,6 @@ print_r($stripe);
 echo "<br><br>Email:<br>";
 $email = new \SendGrid\Mail\Mail();
 print_r($email);
-
-echo "<br><br>MONGO EXTENSION LOADED:";
-echo extension_loaded("mongodb") ? "loaded\n" : "not loaded\n";
 
 $mongo_username = "doadmin";
 $mongo_password = "278j5Ns41Gmoc6z0";
