@@ -14,13 +14,13 @@ $mysql_password = "fcmakbh4nfis1942";
 $mysql_host = "db-mysql-jd-test-database-do-user-9579838-0.b.db.ondigitalocean.com";
 $mysql_database = "defaultdb";
 
-/*
+
 $db = mysqli_connect($mysql_host, $mysql_username, $mysql_password, $mysql_database);
-*/
 
-$db = mysqli_connect("test", "test", "test", "test");
 
-echo "<br><br>MYSQLI CONNECT<br>";
+//$db = mysqli_connect("test", "test", "test", "test");
+
+echo "<br><br>MYSQLI CONNECT - Using DO database<br>";
 
 print_r($db);
 
