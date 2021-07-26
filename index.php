@@ -8,7 +8,13 @@ echo "<div style='font-size: 16px;'>";
 
 echo "<br><a href='php_info.php' target='_blank'>PHP INFO</a><br>";
 
-$db = mysqli_connect("test", "test", "test", "test");
+$mysql_username = "doadmin";
+$mysql_password = "fcmakbh4nfis1942";
+$mysql_host = "db-mysql-jd-test-database-do-user-9579838-0.b.db.ondigitalocean.com";
+$mysql_database = "defaultdb";
+
+
+$db = mysqli_connect($mysql_host, $mysql_username, $mysql_password, $mysql_database);
 
 echo "<br><br>MYSQLI CONNECT<br>";
 
