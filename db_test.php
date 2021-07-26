@@ -8,12 +8,15 @@ $mysqli_port = 25060;
 
 
 $db = mysqli_connect($mysql_host, $mysql_username, $mysql_password, $mysql_database, $mysqli_port);
-
+/*
 $sql = "CREATE TABLE IF NOT EXISTS test_table(
             test_id SERIAL PRIMARY KEY,
             test_text VARCHAR(255),
             test_int INT
 )";
+*/
+
+$sql = "INSERT INTO test_table (test_text, test_int) VALUES ('Some test text!', '7')";
 
 $result = mysqli_query($db, $sql);
 

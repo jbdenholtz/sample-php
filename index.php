@@ -18,6 +18,26 @@ $mysqli_port = 25060;
 
 $db = mysqli_connect($mysql_host, $mysql_username, $mysql_password, $mysql_database, $mysqli_port);
 
+$sql = "SELECT * FROM test_table";
+
+$result = mysqli_query($db, $sql);        
+
+$error = mysqli_error($db);
+
+echo "MYSQL TEST SELECT";
+
+if ($error != "")
+{
+	echo "ERROR: $error";
+}
+else
+{
+	$test_data = mysqli_fetch_all($result);
+	print_r($test_data);
+}
+
+
+
 
 //$db = mysqli_connect("test", "test", "test", "test");
 
