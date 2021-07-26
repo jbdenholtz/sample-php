@@ -42,31 +42,21 @@ print_r($email);
 echo "<br><br>MONGO EXTENSION LOADED:";
 echo extension_loaded("mongodb") ? "loaded\n" : "not loaded\n";
 
-echo "<br><br>MONGO DATABASE TEST:<br>";
-$database = (new MongoDB\Client)->test;
-print_r($manager);
+$mongo_username = "doadmin";
+$mongo_password = "278j5Ns41Gmoc6z0";
+$mongo_host = "mongodb+srv://db-mongodb-jd-test-database-5c36efbd.mongo.ondigitalocean.com";
+$mongo_port = 27017;
+$mongo_database = "admin";
 
-/*
 
 echo "<br><br>MONGO MANAGER:<br>";
-$manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");    
+//$manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");    
+$manager = new MongoDB\Driver\Manager("$mongo_host:$mongo_port");
 print_r($manager);
 
 echo "<br><br>MONGO QUERY:<br>";
 $query = new MongoDB\Driver\Query(array('age' => 30));    
 print_r($query);
-
-
-
-echo "<br><br>MONGO CLIENT:<br>";
-$client = new MongoDB\Client("mongodb://localhost:27017");    
-print_r($client);
-
-*/
-
-
-
-
 
 echo "</div>";
 
