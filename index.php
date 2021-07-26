@@ -51,7 +51,7 @@ $mongo_database = "admin";
 
 echo "<br><br>MONGO MANAGER:<br>";
 //$manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");    
-$manager = new MongoDB\Driver\Manager("$mongo_host:$mongo_port");
+$manager = new MongoDB\Driver\Manager($mongo_host);
 print_r($manager);
 
 echo "<br><br>MONGO QUERY:<br>";
