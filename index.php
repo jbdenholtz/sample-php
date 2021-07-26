@@ -28,7 +28,7 @@ $result = mysqli_query($db, $sql);
 
 $error = mysqli_error($db);
 
-echo "<br>MYSQL TEST SELECT<br>";
+echo "<br><br>MYSQL TEST SELECT<br>";
 
 if ($error != "")
 {
