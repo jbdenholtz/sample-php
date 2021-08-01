@@ -40,6 +40,13 @@ echo "<br><br>MYSQLI CONNECT - Using DO database<br>";
 
 print_r($db);
 
+
+$db2 = mysqli_connect("mysql://doadmin:fcmakbh4nfis1942@db-mysql-jd-test-database-do-user-9579838-0.b.db.ondigitalocean.com:25060/defaultdb");
+
+echo "<br><br>MYSQLI CONNECT - Using DO database - URL CONNECT<br>";
+
+print_r($db);
+
 $sql = "SELECT * FROM test_table";
 
 $result = mysqli_query($db, $sql);        
