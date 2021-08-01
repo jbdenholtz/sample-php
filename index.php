@@ -22,9 +22,9 @@ include($_SERVER['DOCUMENT_ROOT']. '/config_test.php');
 echo "<br>HREF<br>";
 echo $_SERVER['HTTP_HOST'];
 
-//echo "<br>GLOBALS<br>";
+echo "<br>GLOBALS<br>";
 
-//print_r($GLOBALS);
+print_r($GLOBALS);
 
 
 $mysql_username = "doadmin";
