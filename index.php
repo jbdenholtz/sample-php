@@ -9,7 +9,7 @@ echo "<div style='font-size: 16px;'>";
 echo "<br><a href='php_info.php' target='_blank'>PHP INFO</a><br>";
 
 echo "<br>ENV VARS<br>";
-print_r(getenv('DATABASE_URL'));
+var_dump(getenv('DATABASE_URL'));
 
 echo "<br>SERVER ROOT<br>";
 echo $_SERVER['DOCUMENT_ROOT'];
@@ -54,7 +54,7 @@ echo error_get_last()['message'];
 
 
 
-$db3 = mysqli_connect(getenv('DATABASE_URL'));
+$db3 = mysqli_connect('mysql://doadmin:fcmakbh4nfis1942@db-mysql-jd-test-database-do-user-9579838-0.b.db.ondigitalocean.com:25060/defaultdb?ssl-mode=REQUIRED');
 
 echo "<br><br>MYSQLI CONNECT - Using DO database - URL CONNECT with param<br>";
 
