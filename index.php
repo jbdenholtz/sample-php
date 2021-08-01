@@ -8,11 +8,13 @@ echo "<div style='font-size: 16px;'>";
 
 echo "<br><a href='php_info.php' target='_blank'>PHP INFO</a><br>";
 
-echo "<br>ENV VARS<br>";
-print_r(getenv());
+//echo "<br>ENV VARS<br>";
+//print_r(getenv());
 
 echo "<br>SERVER ROOT<br>";
 echo $_SERVER['DOCUMENT_ROOT'];
+
+include($_SERVER['DOCUMENT_ROOT']. '/resources/library');
 
 
 $mysql_username = "doadmin";
