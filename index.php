@@ -14,7 +14,7 @@ echo "<br><a href='php_info.php' target='_blank'>PHP INFO</a><br>";
 echo "<br>SERVER ROOT<br>";
 echo $_SERVER['DOCUMENT_ROOT'];
 
-include($_SERVER['DOCUMENT_ROOT']. '/resources/library');
+include($_SERVER['DOCUMENT_ROOT']. '/resources/library/include_test.php');
 
 
 $mysql_username = "doadmin";
