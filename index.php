@@ -47,7 +47,15 @@ $db2 = mysqli_connect($database_url);
 
 echo "<br><br>MYSQLI CONNECT - Using DO database - URL CONNECT<br>";
 
-print_r($db);
+print_r($db2);
+
+
+
+$db3 = mysqli_connect(getenv('DATABASE_URL'));
+
+echo "<br><br>MYSQLI CONNECT - Using DO database - URL CONNECT with param<br>";
+
+print_r($db3);
 
 $sql = "SELECT * FROM test_table";
 
