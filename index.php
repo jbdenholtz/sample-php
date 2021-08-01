@@ -19,9 +19,12 @@ include($_SERVER['DOCUMENT_ROOT']. '/resources/library/include_test.php');
 
 include($_SERVER['DOCUMENT_ROOT']. '/config_test.php');
 
-echo "<br>GLOBALS<br>";
+echo "<br>HREF<br>";
+echo $_SERVER['HTTP_HOST'];
 
-print_r($GLOBALS);
+//echo "<br>GLOBALS<br>";
+
+//print_r($GLOBALS);
 
 
 $mysql_username = "doadmin";
