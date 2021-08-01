@@ -41,7 +41,7 @@ echo "<br><br>MYSQLI CONNECT - Using DO database<br>";
 print_r($db);
 
 
-$db2 = mysqli_connect("mysql://doadmin:fcmakbh4nfis1942@db-mysql-jd-test-database-do-user-9579838-0.b.db.ondigitalocean.com:25060/defaultdb");
+$db2 = mysqli_connect(getenv('DATABASE_URL'));
 
 echo "<br><br>MYSQLI CONNECT - Using DO database - URL CONNECT<br>";
 
