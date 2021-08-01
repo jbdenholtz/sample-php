@@ -17,6 +17,13 @@ echo $_SERVER['DOCUMENT_ROOT'];
 include($_SERVER['DOCUMENT_ROOT']. '/resources/library/include_test.php');
 
 
+include($_SERVER['DOCUMENT_ROOT']. '/resources/config_test.php');
+
+echo "<br>GLOBALS<br>";
+
+print_r($GLOBALS);
+
+
 $mysql_username = "doadmin";
 $mysql_password = "fcmakbh4nfis1942";
 $mysql_host = "db-mysql-jd-test-database-do-user-9579838-0.b.db.ondigitalocean.com";
