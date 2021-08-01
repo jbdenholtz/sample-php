@@ -17,7 +17,7 @@ echo $_SERVER['DOCUMENT_ROOT'];
 include($_SERVER['DOCUMENT_ROOT']. '/resources/library/include_test.php');
 
 
-include('config_test.php');
+include($_SERVER['DOCUMENT_ROOT']. '/config_test.php');
 
 echo "<br>GLOBALS<br>";
 
