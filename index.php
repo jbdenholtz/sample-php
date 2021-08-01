@@ -40,8 +40,10 @@ echo "<br><br>MYSQLI CONNECT - Using DO database<br>";
 
 print_r($db);
 
+echo $DATABASE;
 
-$db2 = mysqli_connect(getenv('DATABASE_URL'));
+$database_url = explode("?", getenv('DATABASE_URL'))[0];
+$db2 = mysqli_connect($database_url);
 
 echo "<br><br>MYSQLI CONNECT - Using DO database - URL CONNECT<br>";
 
