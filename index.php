@@ -19,12 +19,12 @@ include($_SERVER['DOCUMENT_ROOT']. '/resources/library/include_test.php');
 
 include($_SERVER['DOCUMENT_ROOT']. '/config_test.php');
 
-echo "<br>HREF<br>";
-echo $_SERVER['HTTP_HOST'];
+//echo "<br>HREF<br>";
+//echo $_SERVER['HTTP_HOST'];
 
-echo "<br>GLOBALS<br>";
+//echo "<br>GLOBALS<br>";
 
-print_r($GLOBALS);
+//print_r($GLOBALS);
 
 
 $mysql_username = "doadmin";
@@ -34,20 +34,23 @@ $mysql_database = "defaultdb";
 $mysqli_port = 25060;
 
 
-$db = mysqli_connect($mysql_host, $mysql_username, $mysql_password, $mysql_database, $mysqli_port);
+//$db = mysqli_connect($mysql_host, $mysql_username, $mysql_password, $mysql_database, $mysqli_port);
 
-echo "<br><br>MYSQLI CONNECT - Using DO database<br>";
+//echo "<br><br>MYSQLI CONNECT - Using DO database<br>";
 
-print_r($db);
+//print_r($db);
 
-echo $DATABASE;
 
 $database_url = explode("?", getenv('DATABASE_URL'))[0];
 $db2 = mysqli_connect($database_url);
 
 echo "<br><br>MYSQLI CONNECT - Using DO database - URL CONNECT<br>";
 
-print_r($db2);
+var_dump($db2);
+
+echo "<br><br>PHP ERROR:<br><br>";
+echo error_get_last()['message'];
+
 
 
 
@@ -55,7 +58,12 @@ $db3 = mysqli_connect(getenv('DATABASE_URL'));
 
 echo "<br><br>MYSQLI CONNECT - Using DO database - URL CONNECT with param<br>";
 
-print_r($db3);
+var_dump($db3);
+
+echo "<br><br>PHP ERROR:<br><br>";
+echo error_get_last()['message'];
+
+/*
 
 $sql = "SELECT * FROM test_table";
 
@@ -91,7 +99,7 @@ else
 //$last_error = error_get_last();
 //echo "<br>MYSQLI ERROR:<br>";
 //print_r($last_error);
-
+*/
 //-----------------------------------------------------------------------------    
 
 echo "<br><br>STRIPE:<br>";
