@@ -307,10 +307,10 @@ if ($db)
     }
 
     $sql = "CREATE TABLE IF NOT EXISTS `expenses_bt_category_ids` (
-        `irs_category_id` int(11) NOT NULL,
-        `irs_category_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-        PRIMARY KEY `irs_category_id` (`irs_category_id`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
+            `irs_category_id` int(11) NOT NULL,
+            `irs_category_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+            PRIMARY KEY (`irs_category_id`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
 
     $result = mysqli_query($GLOBALS['db'], $sql);        
 
@@ -346,7 +346,7 @@ if ($db)
     $sql = "LOAD DATA LOCAL INFILE 
     '{$GLOBALS['root_dir']}/resources/data_files/expenses_brasstaxes_category_ids.tsv' 
         INTO TABLE 
-            expenses_brasstaxes_category_ids 
+            expenses_bt_category_ids 
         LINES TERMINATED BY '\r\n' 
         IGNORE 1 LINES";
 
