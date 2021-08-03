@@ -182,23 +182,25 @@ if ($db)
 
 
     $sql = "CREATE TABLE IF NOT EXISTS `session_logs` (
-        `user_id` int(10) unsigned DEFAULT NULL,
-        `user_agent` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-        `ip_address` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-        `session_time` int(10) unsigned DEFAULT NULL,
-        `user_platform` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-        `window_inner_height` int(10) unsigned DEFAULT NULL,
-        `window_outer_height` int(10) unsigned DEFAULT NULL,
-        `window_screen_height` int(10) unsigned DEFAULT NULL,
-        `window_inner_width` int(10) unsigned DEFAULT NULL,
-        `window_outer_width` int(10) unsigned DEFAULT NULL,
-        `window_screen_width` int(10) unsigned DEFAULT NULL,
-        `screen_color_depth` int(10) unsigned DEFAULT NULL,
-        `screen_pixel_depth` int(10) unsigned DEFAULT NULL,
-        `window_device_pixel_ratio` int(10) unsigned DEFAULT NULL,
-        `navigator_max_touch_points` int(10) unsigned DEFAULT NULL,
-        `document_referrer` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
+            `user_id` int(10) unsigned DEFAULT NULL,
+            `user_agent` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+            `ip_address` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+            `session_time` int(10) unsigned DEFAULT NULL,
+            `user_platform` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+            `window_inner_height` int(10) unsigned DEFAULT NULL,
+            `window_outer_height` int(10) unsigned DEFAULT NULL,
+            `window_screen_height` int(10) unsigned DEFAULT NULL,
+            `window_inner_width` int(10) unsigned DEFAULT NULL,
+            `window_outer_width` int(10) unsigned DEFAULT NULL,
+            `window_screen_width` int(10) unsigned DEFAULT NULL,
+            `screen_color_depth` int(10) unsigned DEFAULT NULL,
+            `screen_pixel_depth` int(10) unsigned DEFAULT NULL,
+            `window_device_pixel_ratio` int(10) unsigned DEFAULT NULL,
+            `navigator_max_touch_points` int(10) unsigned DEFAULT NULL,
+            `document_referrer` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+            `session_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+            PRIMARY KEY (`session_id`)
+        ) ENGINE=InnoDB AUTO_INCREMENT=283 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
 
     $result = mysqli_query($GLOBALS['db'], $sql);        
 
@@ -212,19 +214,21 @@ if ($db)
     }
 
     $sql = "CREATE TABLE IF NOT EXISTS `expenses_error_logs` (
-        `error_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-        `error_code` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-        `display_message` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-        `request_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-        `user_id` int(10) unsigned DEFAULT NULL,
-        `error_time` datetime DEFAULT current_timestamp(),
-        `additional_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-        `additional_note` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-        `note` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-        `source` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-        `error_location` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-        `error_url` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
+            `error_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+            `error_code` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+            `display_message` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+            `request_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+            `user_id` int(10) unsigned DEFAULT NULL,
+            `error_time` datetime DEFAULT current_timestamp(),
+            `additional_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+            `additional_note` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+            `note` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+            `source` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+            `error_location` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+            `error_url` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+            `error_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+            PRIMARY KEY (`error_id`)
+        ) ENGINE=InnoDB AUTO_INCREMENT=5690 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
 
     $result = mysqli_query($GLOBALS['db'], $sql);        
 
@@ -242,8 +246,10 @@ if ($db)
         `webhook_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
         `id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
         `webhook_time` datetime DEFAULT current_timestamp(),
-        `note` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
+        `note` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+        `webhook_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+        PRIMARY KEY (`webhook_id`)
+      ) ENGINE=InnoDB AUTO_INCREMENT=2421 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
 
     $result = mysqli_query($GLOBALS['db'], $sql);        
 
@@ -256,13 +262,15 @@ if ($db)
         echo "ERROR: $error";
     }
 
-    $sql = "CREATE TABLE `expenses_user_history` (
-        `user_id` int(10) unsigned DEFAULT NULL,
-        `change_log` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-        `changed_at` datetime DEFAULT current_timestamp(),
-        `type` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-        `foreign_key` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
+    $sql = "CREATE TABLE IF NOT EXISTS `expenses_user_history` (
+            `user_id` int(10) unsigned DEFAULT NULL,
+            `change_log` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+            `changed_at` datetime DEFAULT current_timestamp(),
+            `type` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+            `foreign_key` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+            `history_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+            PRIMARY KEY (`history_id`)
+        ) ENGINE=InnoDB AUTO_INCREMENT=3018 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
 
     $result = mysqli_query($GLOBALS['db'], $sql);        
 
