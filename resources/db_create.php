@@ -11,8 +11,8 @@ $db = mysqli_connect($mysql_host, $mysql_username, $mysql_password, $mysql_datab
 echo "<br><br>MYSQLI CONNECT - Using brasstaxes-expenses DO<br>";
 
 print_r($db);
-/*
-if (false)
+
+if ($db)
 {
 
     $GLOBALS['db'] = $db;
@@ -353,5 +353,5 @@ if (false)
         echo "ERROR: $error";
     }
 }
-*/
+
 ?>
