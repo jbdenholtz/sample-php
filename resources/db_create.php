@@ -309,7 +309,7 @@ if ($db)
     $sql = "CREATE TABLE IF NOT EXISTS `expenses_bt_category_ids` (
         `irs_category_id` int(11) NOT NULL,
         `irs_category_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-        UNIQUE KEY `irs_category_id` (`irs_category_id`)
+        PRIMARY KEY `irs_category_id` (`irs_category_id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
 
     $result = mysqli_query($GLOBALS['db'], $sql);        
