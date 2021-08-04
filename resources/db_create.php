@@ -1,7 +1,7 @@
 <?php
 
 $mysql_username = "mustacheo";
-$mysql_password = "jjwp8sr9xc0ukrwt";
+$mysql_password = "yw7k331yrxhrxbb7";
 $mysql_host = "brasstaxes-expenses-do-user-9579838-0.b.db.ondigitalocean.com";
 $mysql_database = "brasstaxes-expenses";
 $mysqli_port = 25060;
