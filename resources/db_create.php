@@ -361,5 +361,4 @@ if ($db)
         echo "ERROR: $error";
     }
 }
-
 ?>

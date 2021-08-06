@@ -1,0 +1,35 @@
+IRS Category ID,IRS Category Name
+0,Ignore
+1,Advertising
+2,Fees
+3,Independent Contractors
+4,Big Equipment
+5,Insurance
+6,Legal & Professional Services
+7,Office Expenses
+8,Rent or Lease
+9,Repairs
+10,Supplies
+11,Travel
+12,Meals & Entertainment
+13,Cell Phone & Internet
+14,Magazines & Books
+15,Research
+16,Professional Development
+17,Donations: Money
+18,Donations: Not Money
+19,Health Insurance
+20,Auto Expenses
+21,Auto Tolls
+22,Auto Parking
+23,Home Office Rent/Mortgage
+24,Home Office RE Taxes
+25,Home Office Utilities
+,
+,
+,
+98,Income Taxes Paid
+99,Gross Income
+,
+,
+1000,positive number = Gross Income || negative number = Independent Contractors
