@@ -9,6 +9,9 @@ $mysql_host = "brasstaxes-expenses-do-user-9579838-0.b.db.ondigitalocean.com";
 $mysql_database = "brasstaxes-expenses";
 $mysqli_port = 25060;
 
+$db = mysqli_connect($mysql_host, $mysql_username, $mysql_password, $mysql_database, $mysqli_port);
+$GLOBALS['db'] = $db;
+
 $file = fopen('data_files/brasstaxes_expense_categories.csv', "r");
 $data = fgetcsv($file, 1000, ",");
 
