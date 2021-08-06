@@ -28,6 +28,18 @@ while (($data = fgetcsv($file)) !== FALSE)
         $sql .= ", ('$id', '$name')";
     }
 }
+
+$result = mysqli_query($GLOBALS['db'], $sql);        
+
+$error = mysqli_error($GLOBALS['db']);
+
+echo "<br><br>MYSQL Insert bt categories<br>";
+
+if ($error != "")
+{
+    echo "ERROR: $error";
+}
+
 echo "<br>$sql";
 
 fclose($file);
@@ -57,7 +69,19 @@ for ($i=1; $i<count($data_array); $i++)
         $sql .= ", ";
     }
 }
-echo "<br><br>$sql";
 
+$result = mysqli_query($GLOBALS['db'], $sql);        
+
+$error = mysqli_error($GLOBALS['db']);
+
+echo "<br><br>MYSQL Insert plaid categories<br>";
+
+if ($error != "")
+{
+    echo "ERROR: $error";
+}
+
+echo "<br><br>$sql";
+fclose($file);
 
 ?>
