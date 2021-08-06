@@ -16,7 +16,7 @@ $file = fopen('data_files/brasstaxes_expense_categories.csv', "r");
 $data = fgetcsv($file, 1000, ",");
 
 
-$sql = "INSERT INTO expenses_bt_category_ids (irs_category_id, irs_category_name) VALUES ('-1', Uncategorized)";
+$sql = "INSERT INTO expenses_bt_category_ids (irs_category_id, irs_category_name) VALUES ('-1', 'Uncategorized')";
 while (($data = fgetcsv($file)) !== FALSE) 
 {
     //echo "<br>";
@@ -84,4 +84,4 @@ if ($error != "")
 echo "<br><br>$sql";
 fclose($file);
 
-?>
+?>hookratwavesarehard
